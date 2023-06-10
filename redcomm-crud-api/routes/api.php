@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('posts', [PostController::class, 'index']);
-Route::post('post/{uuid}', [PostController::class, 'show']);
-Route::post('post/create', [PostController::class, 'create']);
-Route::post('post/update{uuid}', [PostController::class, 'update']);
+Route::get('post/{uuid}', [PostController::class, 'show']);
+Route::post('post/create', [PostController::class, 'store']);
+Route::post('post/update/{uuid}', [PostController::class, 'update']);
 Route::post('post/destroy/{uuid}', [PostController::class, 'destroy']);

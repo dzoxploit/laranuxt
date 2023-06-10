@@ -19,7 +19,7 @@ class PostController extends Controller
         try{
             $search = $request->get('q');
             
-            $post = Post::where(function ($query) use ($term) {
+            $post = Post::where(function ($query) use ($search) {
                             $query->where('title', "like", "%" . $search . "%");
                             $query->orWhere('description', "like", "%" . $search . "%");
                         })
@@ -140,7 +140,6 @@ class PostController extends Controller
 
             $post = Post::where('uuid',$uuid)->first();
 
-            $post->uuid = Str::uuid()->toString();
             $post->title = $request->title;
             $post->description = $request->description;
             $post->save();
@@ -172,20 +171,23 @@ class PostController extends Controller
     {
         try{
 
-            $post = Post::where('uuid',$uuid)->first();
-            $post->delete();
+            $post = DB::table('posts')->where('uuid', $uuid)->delete();
 
             DB::statement("SET @count = 0;");
             DB::statement("UPDATE `posts` SET `posts`.`id` = @count:= @count + 1;");
             DB::statement("ALTER TABLE `posts` AUTO_INCREMENT = 1;");
 
+            http_response_code(204); 
+
             return response()->json([
-                "status" => 201,
+                "status" => 204,
                 "message" => "Post Berhasil Dihapus",
                 "data" => $post
             ]);
 
         }catch(\Exception $e){
+
+            http_response_code(405); 
 
             return response()->json([
                 "status" => 400,

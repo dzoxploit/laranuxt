@@ -3,11 +3,9 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Faker\Generator as Faker;
-use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
 class PostFactory extends Factory
 {
@@ -19,9 +17,7 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            "uuid" => Str::uuid()->toString(),
-            "title" => $this->faker->name(),
-            "description" => $this->faker->text(),
+            //
         ];
     }
 }

@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "225c2d61-9137-4765-8c09-f0dff9a9e0e2",
+		"name": "redcomm",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Index",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/post/9978d1ba-82a4-41a7-a8fc-a847df12039a",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"post",
+						"9978d1ba-82a4-41a7-a8fc-a847df12039a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "didin nur yahya",
+							"type": "default"
+						},
+						{
+							"key": "description",
+							"value": "lorem ipsum dolor sit amet",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/post/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"post",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "salma aulia",
+							"type": "default"
+						},
+						{
+							"key": "description",
+							"value": "salma farmasi",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/post/update/3b81349c-f3f9-44bd-820a-141e50ab4853",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"post",
+						"update",
+						"3b81349c-f3f9-44bd-820a-141e50ab4853"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/post/destroy/3b81349c-f3f9-44bd-820a-141e50ab4853",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"post",
+						"destroy",
+						"3b81349c-f3f9-44bd-820a-141e50ab4853"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

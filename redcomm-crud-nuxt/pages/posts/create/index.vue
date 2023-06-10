@@ -27,13 +27,11 @@ const storePost = async () => {
   //init formData
   let formData = new FormData();
 
-  //assign state value to formData
-  formData.append("image", image.value);
   formData.append("title", title.value);
-  formData.append("content", content.value);
+  formData.append("description", description.value);
 
   //store data with API
-  await $fetch(`${config.public.apiBase}/api/posts`, {
+  await $fetch(`${config.public.apiBase}/api/post/create`, {
     //method
     method: "POST",
 
@@ -59,17 +57,6 @@ const storePost = async () => {
           <div class="card-body">
             <form @submit.prevent="storePost()">
               <div class="mb-3">
-                <label class="form-label fw-bold">Image</label>
-                <input
-                  type="file"
-                  class="form-control"
-                  @change="handleFileChange($event)"
-                />
-                <div v-if="errors.image" class="alert alert-danger mt-2">
-                  <span>{{ errors.image[0] }}</span>
-                </div>
-              </div>
-              <div class="mb-3">
                 <label class="form-label fw-bold">Title</label>
                 <input
                   type="text"
@@ -82,15 +69,15 @@ const storePost = async () => {
                 </div>
               </div>
               <div class="mb-3">
-                <label class="form-label fw-bold">Content</label>
+                <label class="form-label fw-bold">Description</label>
                 <textarea
                   class="form-control"
-                  v-model="content"
+                  v-model="description"
                   rows="5"
-                  placeholder="Content Post"
+                  placeholder="Description Post"
                 ></textarea>
-                <div v-if="errors.content" class="alert alert-danger mt-2">
-                  <span>{{ errors.content[0] }}</span>
+                <div v-if="errors.description" class="alert alert-danger mt-2">
+                  <span>{{ errors.description[0] }}</span>
                 </div>
               </div>
               <button
@@ -105,6 +92,4 @@ const storePost = async () => {
       </div>
     </div>
   </div>
-
-  function useRuntimeConfig() { throw new Error("Function not implemented."); }
 </template>

@@ -110,6 +110,6 @@ public function testPostIsDestroyed() {
     );
 
     $this->json('destroy', "api/post/destroy/$post->uuid")
-                ->assertStatus(405);
+                ->assertStatus(204);
 }
 }

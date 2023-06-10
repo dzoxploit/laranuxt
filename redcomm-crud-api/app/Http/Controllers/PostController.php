@@ -190,7 +190,7 @@ class PostController extends Controller
             http_response_code(405); 
 
             return response()->json([
-                "status" => 400,
+                "status" => 405,
                  "message" => 'Error'.$e->getMessage(),
                 "data" => null
             ]);

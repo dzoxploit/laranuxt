@@ -9,7 +9,7 @@ use Illuminate\Http\Response;
 use App\Models\Post;
 use Faker\Generator as Faker;
 
-class ExampleTest extends TestCase
+class PostTest extends TestCase
 {
     /**
      * A basic test example.

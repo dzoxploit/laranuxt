@@ -15,7 +15,7 @@ const route = useRoute();
 
 //fetch daa for get detail data post
 const { data: post }: any = await useFetch(
-  `${config.public.apiBase}/api/post/show/${route.params.id}`
+  `${config.public.apiBase}/api/post/${route.params.id}`
 );
 
 //define state
@@ -37,7 +37,6 @@ const updatePost = async () => {
   //assign state value to formData
   formData.append("title", title.value);
   formData.append("description", description.value);
-  formData.append("_method", "PATCH");
 
   //store data with API
   await $fetch(`${config.public.apiBase}/api/post/update/${route.params.id}`, {

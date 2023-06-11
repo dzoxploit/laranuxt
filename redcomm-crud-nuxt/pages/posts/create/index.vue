@@ -11,9 +11,8 @@ const config = useRuntimeConfig();
 const router = useRouter();
 
 //define state
-const image = ref("");
 const title = ref("");
-const content = ref("");
+const description = ref("");
 const errors: any = ref({});
 
 //method for handle file changes
